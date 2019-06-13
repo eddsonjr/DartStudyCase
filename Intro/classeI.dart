@@ -1,34 +1,39 @@
 
 class Carro {
-  String modelo;
-  String fabricante;
-  String placa; 
   
+  String _modelo;
+  String _fabricante;
+  String _placa;
   
-  //Construtores
-  Carro(String modelo, String fabricante,String placa){
-    this.modelo = modelo;
-    this.fabricante = fabricante;
-    this.placa = placa;
-  }
+  //O _ na frente do nome determina que a variavel e privada.
+ 
+  
+  //Construtores 
+  //Voce tambem pode usar o padrao de construtor do Java
+  Carro(this._modelo,this._fabricante,this._placa);
+ 
   
   
   //getters and setters
-  String get getModelo => this.modelo;
-  String get getFabricante => this.fabricante;
-  String get getPlaca => this.placa;
   
-  set setModelo(String modelo){ this.modelo = modelo; }
-  set setFabricante(String fabricante){this.fabricante = fabricante;}
-  set setPlaca(String placa){this.placa = placa;}
+  //getters - nao podem receber argumentos
+  String get Modelo => this._modelo;
+  String get Fabricante => this._fabricante;
+  String get Placa => this._placa;
+  
+  
+  //setters - nao podem retornar
+  set Modelo(String modelo){ this._modelo = modelo; }
+  set Fabricante(String fabricante){this._fabricante = fabricante;}
+  set Placa(String placa){this._placa = placa;}
   
   //Functions
   @override 
   String toString() {
     String carInfo = "Informacoes do carro: \n"+ 
-                     "Modelo: ${this.modelo} \n" + 
-                     "Placa: ${this.placa} \n" + 
-                     "Fabricante: ${this.fabricante}\n";
+                     "Modelo: ${this._modelo} \n" + 
+                     "Placa: ${this._placa} \n" + 
+                     "Fabricante: ${this._fabricante}\n";
     return carInfo;
     
   }
@@ -40,7 +45,7 @@ class Carro {
 main(){
   
     Carro carro = new Carro('I320','BMW','STP-0987');
-    print(carro.getModelo);
+    print(carro._modelo);
     print(carro.toString());
 }
 
